@@ -12,7 +12,7 @@ function Todo({ todo, markComplete, removeTodo }) {
   return (
     <li className="todo">
       <label className="checkbox">
-        <input type="checkbox" checked={todo.completed} />
+        <input type="checkbox" defaultChecked={todo.completed} />
         <span className="checkbox-custom" onClick={handleCheckClick}></span>
       </label>
       <p style={{ textDecoration: todo.completed ? "line-through" : null }}>

@@ -1,22 +1,22 @@
 export const initialData = [
   {
     id: "1",
-    task: "Make a more original project",
+    body: "Make a more original project",
     completed: false,
   },
   {
     id: "2",
-    task: "Learn how to make Baklawa",
+    body: "Learn how to make Baklawa",
     completed: true,
   },
   {
     id: "3",
-    task: "Eat the Baklawa",
+    body: "Eat the Baklawa",
     completed: false,
   },
   {
     id: "4",
-    task: "Play Animal Crossing",
+    body: "Play Animal Crossing",
     completed: false,
   },
 ];
