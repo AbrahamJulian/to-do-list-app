@@ -4,7 +4,7 @@ import Todo from "../Todo/Todo";
 function List({ todos, markComplete, removeTodo }) {
   return (
     <ul
-      className="list"
+      className="pa0"
       style={{ visibility: todos.length ? "visible" : "hidden" }}
     >
       {todos.map((todo) => (

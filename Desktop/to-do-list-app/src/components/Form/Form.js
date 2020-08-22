@@ -1,39 +1,54 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { CirclePicker } from "react-color";
+import { render } from "@testing-library/react";
 
-function Form({ addTodo }) {
-  const [todo, setTodo] = useState({
-    id: "",
-    body: "",
-    completed: false,
-  });
+class Form extends React.Component {
+  constructor(addTodo) {
+    super(addTodo);
 
-  function handleInputChange(e) {
-    setTodo({ ...todo, body: e.target.value });
+    this.state = {
+      id: "",
+      body: "",
+      completed: false,
+      color: "#ffffff",
+    };
   }
 
-  function handleSubmit(e) {
+  handleInputChange = (e) => {
+    this.setState({ ...this.state, body: e.target.value });
+  };
+
+  handleSubmit = (e) => {
     e.preventDefault();
-    if (todo.body.trim()) {
-      addTodo({ ...todo, id: uuidv4() });
-      setTodo({ ...todo, body: "" });
+    if (this.state.body.trim()) {
+      this.props.addTodo({ ...this.state, id: uuidv4() });
+      this.setState({ ...this.state, body: "" });
+      this.setState({ ...this.state, color: "" });
     }
-  }
+  };
 
-  return (
-    <div className="form">
-      <h3>To do list</h3>
-      <form onSubmit={handleSubmit}>
-        <input
-          name="todo"
-          type="text"
-          value={todo.body}
-          onChange={handleInputChange}
-        />
-        <button type="submit">Add todo</button>
-      </form>
-    </div>
-  );
+  handleColorChange = (color, e) => {
+    this.setState({ color: color.hex });
+  };
+
+  render() {
+    return (
+      <div className="form">
+        <h3>To do list</h3>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            name="todo"
+            type="text"
+            value={this.state.body}
+            onChange={this.handleInputChange}
+          />
+          <button type="submit">Add todo</button>
+          <CirclePicker onChangeComplete={this.handleColorChange} />
+        </form>
+      </div>
+    );
+  }
 }
 
 export default Form;

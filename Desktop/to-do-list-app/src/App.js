@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Form from "./components/Form/Form";
 import List from "./components/List/List";
 import { initialData } from "./data/data";
+import Tachyons from "tachyons/css/tachyons.min.css";
 import "./App.css";
 
 const LOCAL_STORAGE_KEY = "react-todo-list-todos";
@@ -39,7 +40,7 @@ function App() {
   }
 
   return (
-    <main className="main">
+    <main className="app mv1 mh5 flex flex-column items-center justify-center">
       <Form addTodo={addTodo} />
       <List todos={todos} markComplete={markComplete} removeTodo={removeTodo} />
     </main>

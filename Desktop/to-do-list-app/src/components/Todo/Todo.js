@@ -10,10 +10,16 @@ function Todo({ todo, markComplete, removeTodo }) {
   }
 
   return (
-    <li className="todo">
+    <li
+      className="flex flex-row pa1 ma2 mw-100"
+      style={{ background: todo.color }}
+    >
       <label className="checkbox">
-        <input type="checkbox" defaultChecked={todo.completed} />
-        <span className="checkbox-custom" onClick={handleCheckClick}></span>
+        <input
+          type="checkbox"
+          checked={todo.completed}
+          onChange={handleCheckClick}
+        />
       </label>
       <p style={{ textDecoration: todo.completed ? "line-through" : null }}>
         {todo.body}
