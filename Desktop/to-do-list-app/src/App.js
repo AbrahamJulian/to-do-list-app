@@ -5,7 +5,7 @@ import { initialData } from "./data/data";
 import Tachyons from "tachyons/css/tachyons.min.css";
 import "./App.css";
 
-const LOCAL_STORAGE_KEY = "react-todo-list-todos";
+const LOCAL_STORAGE_KEY = "to-do-list";
 
 function App() {
   const [todos, setTodo] = useState(initialData);

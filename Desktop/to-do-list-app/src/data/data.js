@@ -1,26 +1,26 @@
 export const initialData = [
   {
     id: "1",
-    body: "Test 1",
+    body: "Feed doggooooo",
     completed: false,
-    color: "#ff0000",
+    color: "#8ff2a9",
   },
   {
     id: "2",
-    body: "Learn how to make Baklawa",
+    body: "Make Salted Cream Cheese",
     completed: true,
-    color: "#fff000",
+    color: "#91e0ff",
   },
   {
     id: "3",
-    body: "Test",
+    body: "Buy cooked meat for Gordon",
     completed: false,
-    color: "#ff0ff0",
+    color: "#ff9cb6",
   },
   {
     id: "4",
-    body: "Oho it works",
+    body: "Oho it works!~",
     completed: false,
-    color: "#ff0fff",
+    color: "#fffc9e",
   },
 ];
